@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+  週次筆記模板。用法：
+  1. 複製到 lessons/week-NN-短名.html
+  2. 把所有 {{...}} 換掉（check.py 會檢查有沒有漏）
+  3. 7 個 section 的 id 與順序不可更動（見 AGENTS.md 5.2）
+-->
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 {{NN}} 週｜{{標題}}｜AI 課程筆記</title>
+  <meta name="description" content="{{一句話摘要，30 字內}}">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-week="{{NN}}">
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="../index.html">AI 課程<span>筆記</span></a>
+      <nav class="site-nav">
+        <a href="../index.html">首頁</a>
+        <a href="../glossary.html">詞彙表</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="lesson-hero">
+      <span class="week-badge">第 {{NN}} 週</span>
+      <h1>{{標題}}</h1>
+      <p class="subtitle">{{副標}}</p>
+      <ul class="tags">
+        <li>{{標籤1}}</li>
+        <li>{{標籤2}}</li>
+      </ul>
+      <ol class="toc">
+        <li><a href="#tldr">一句話重點</a></li>
+        <li><a href="#roadmap">路線圖</a></li>
+        <li><a href="#concepts">核心觀念</a></li>
+        <li><a href="#practice">實作紀錄</a></li>
+        <li><a href="#terms">本週詞彙</a></li>
+        <li><a href="#reflection">我的反思</a></li>
+        <li><a href="#source">來源</a></li>
+      </ol>
+    </div>
+
+    <section id="tldr">
+      <h2><span class="num">01</span>一句話重點</h2>
+      <div class="callout key">
+        <p>{{本週最重要的結論，1–2 句}}</p>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2><span class="num">02</span>本週路線圖</h2>
+      <ol class="flow">
+        <li>{{節點 1}}</li>
+        <li>{{節點 2}}</li>
+        <li>{{節點 3}}</li>
+      </ol>
+    </section>
+
+    <section id="concepts">
+      <h2><span class="num">03</span>核心觀念</h2>
+      <h3>{{觀念一}}</h3>
+      <p>{{說明}}</p>
+      <h3>{{觀念二}}</h3>
+      <p>{{說明}}</p>
+      <h3>{{觀念三}}</h3>
+      <p>{{說明}}</p>
+    </section>
+
+    <section id="practice">
+      <h2><span class="num">04</span>實作紀錄</h2>
+      <ol class="steps">
+        <li><strong>{{步驟名}}</strong>{{說明}}</li>
+      </ol>
+    </section>
+
+    <section id="terms">
+      <h2><span class="num">05</span>本週詞彙</h2>
+      <ul class="chips">
+        <li><a href="../glossary.html#{{詞彙id}}">{{詞彙}}</a></li>
+      </ul>
+    </section>
+
+    <section id="reflection">
+      <h2><span class="num">06</span>我的反思</h2>
+      <ul>
+        <li>{{我會怎麼用}}</li>
+      </ul>
+    </section>
+
+    <section id="source">
+      <h2><span class="num">07</span>來源</h2>
+      <p>{{講義名稱}}（第 {{NN}} 週，{{學期}}）</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      依 <a href="https://github.com/chrisfang20060717-maker/ai-course-notes/blob/main/AGENTS.md">AGENTS.md</a> 規則產生 ·
+      <a href="https://github.com/chrisfang20060717-maker/ai-course-notes">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
