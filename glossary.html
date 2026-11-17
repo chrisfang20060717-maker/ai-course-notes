@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>詞彙表｜AI 課程筆記</title>
+  <meta name="description" content="AI 課程各週出現的專有名詞，用白話解釋並連回出現的週次。">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">AI 課程<span>筆記</span></a>
+      <nav class="site-nav">
+        <a href="index.html">首頁</a>
+        <a href="glossary.html" aria-current="page">詞彙表</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="eyebrow">Glossary</p>
+    <h1>詞彙表</h1>
+    <p class="lead">各週出現的專有名詞，依英文 id 字母排序。每個詞都標出它出現在哪一週。</p>
+
+    <dl class="glossary">
+      <dt id="agents-md">AGENTS.md（專案規則檔）</dt>
+      <dd>放在專案根目錄、給 AI 代理讀的「員工手冊」，寫清楚專案目的、結構與規則。Claude Code 讀 CLAUDE.md、Gemini 讀 GEMINI.md；建議只維護一份，CLAUDE.md 用 <code>@AGENTS.md</code> 引用。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="ai-review">AI 審查（AI Review）</dt>
+      <dd>用另一個 AI 檢查成品是否忠於來源、有沒有講反。要開新的對話、只給成品和來源，不要讓 AI 審自己的作品。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="code-agent">Code Agent（程式代理）</dt>
+      <dd>直接在本機專案資料夾裡讀寫檔案、執行指令的 AI 工具，例如 Antigravity、Claude Code、Codex、OpenCode。預設會顯示每一行修改，並以 git 和腳本做驗證。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="definition-of-done">完成的定義（Definition of Done）</dt>
+      <dd>事先寫好「怎樣才算做完」的具體條件，最好能由腳本自動判斷。沒有它，「做好一點」就只是願望，不是規格。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#tldr">第 10 週</a></span></dd>
+
+      <dt id="graph-engineering">Graph Engineering（流程圖工程）</dt>
+      <dd>把工作事先畫成多個節點與關卡的流程，由人決定流程走向；出錯時退回指定的那一關，而不是整份重做。適合多階段、多人使用的工作。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="llm-wiki">LLM Wiki</dt>
+      <dd>Karpathy 提出的構想：讓 LLM 把原始資料（如論文）逐步整理成互相連結的 wiki 頁面，作為之後產出內容的知識庫。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#practice">第 10 週</a></span></dd>
+
+      <dt id="loop-engineering">Loop Engineering（迴圈工程）</dt>
+      <dd>不再每輪手寫 prompt，而是寫一份含目標、限制、完成標準、停止條件與觸發的規格，讓系統依檢查結果自動反覆修正。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="programmatic-check">程式檢查（Programmatic Check）</dt>
+      <dd>用腳本自動檢查成品，例如測試是否通過、連結有沒有斷、每頁有沒有出處。結果只有過或不過，不靠 AI 自己說「做完了」。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="ralph-loop">Ralph loop</dt>
+      <dd>Geoffrey Huntley 在 2025 年 7 月提出的最簡單 loop：用一行 shell 指令把同一份 PROMPT.md 一輪又一輪餵給 AI，靠重複、檢查與檔案記進度推進工作。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="skill">Skill（SKILL.md）</dt>
+      <dd>把某一類工作的做法與規格寫成獨立檔案，需要時才讓 AI 讀取。主規則檔寫不下的細節可以拆到 skill。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#practice">第 10 週</a></span></dd>
+
+      <dt id="stop-condition">停止條件（Stop Condition）</dt>
+      <dd>Loop 的剎車：例如最多改 3 輪、資料不足就停。沒有停止條件的 loop 會在沒人看管下一直犯錯、一直花 token。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+
+      <dt id="work-agent">Work Agent（工作代理）</dt>
+      <dd>以對話介面幫你完成文件、研究等工作的 AI，例如 ChatGPT Work、Claude、OpenWorker。預設呈現成品與摘要，驗證多半靠人讀。
+        <span class="seen-in">出現於：<a href="lessons/week-10-workflow-design.html#concepts">第 10 週</a></span></dd>
+    </dl>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      依 <a href="https://github.com/chrisfang20060717-maker/ai-course-notes/blob/main/AGENTS.md">AGENTS.md</a> 規則產生 ·
+      <a href="https://github.com/chrisfang20060717-maker/ai-course-notes">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>

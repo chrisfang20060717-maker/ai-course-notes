@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 課程筆記｜一週一頁的生成式 AI 課程整理</title>
+  <meta name="description" content="生成式 AI 課程的每週筆記，依 AGENTS.md 規則由 AI 協作產生，一週一頁。">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">AI 課程<span>筆記</span></a>
+      <nav class="site-nav">
+        <a href="index.html" aria-current="page">首頁</a>
+        <a href="glossary.html">詞彙表</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="home-hero">
+      <p class="eyebrow">Generative AI · Course Notes</p>
+      <h1>一週一頁，<br>把 AI 課變成自己的筆記</h1>
+      <p class="lead">每一週的課程重點、實作步驟與我的反思。網站本身就是一個實驗：所有頁面都依同一份 <code>AGENTS.md</code> 由 AI 協作產生，之後每週照同一套規則往下長。</p>
+    </div>
+
+    <ol class="lesson-list">
+      <li class="lesson-card" data-week="10">
+        <div class="week">WEEK<b>10</b></div>
+        <div>
+          <h2><a href="lessons/week-10-workflow-design.html">把你的工作拆成 AI 能做的流程</a></h2>
+          <p>先寫好完成的定義，再決定要不要加上 Loop 或 Graph。</p>
+          <ul class="tags">
+            <li>Code Agent</li>
+            <li>Loop</li>
+            <li>Graph</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
+    <section id="how">
+      <h2><span class="num">ABOUT</span>這個網站怎麼運作</h2>
+      <p>這不是一次做完的網頁，而是一套「讓 AI 能持續接手」的規則。每個檔案都有固定的角色：</p>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr><th>檔案</th><th>角色</th><th>對應第 10 週的觀念</th></tr>
+          </thead>
+          <tbody>
+            <tr><th><code>AGENTS.md</code></th><td>專案目的、風格、頁面結構、命名與修改規則</td><td>員工手冊</td></tr>
+            <tr><th><code>CLAUDE.md</code></th><td>只寫 <code>@AGENTS.md</code>，共用同一份規則</td><td>只維護一份</td></tr>
+            <tr><th><code>templates/</code></th><td>週次頁模板，新的一週從這裡複製</td><td>固定的輸出格式</td></tr>
+            <tr><th><code>scripts/check.py</code></th><td>自動檢查結構、連結、命名與首頁目錄</td><td>完成的定義、程式檢查</td></tr>
+            <tr><th><code>.agents/workflows/</code></th><td>新增一週筆記的步驟、停止條件</td><td>Loop 規格</td></tr>
+            <tr><th><code>log.md</code></th><td>每次修改都記一筆</td><td>用檔案記進度</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>新增下一週只要三步</h3>
+      <ol class="steps">
+        <li><strong>放講義</strong>把該週講義放進 <code>raw/</code>（不會上傳到 GitHub）。</li>
+        <li><strong>叫 AI 跑流程</strong>在 Code Agent 裡輸入：「/add-lesson 第 11 週，講義在 raw/11.pdf」。AI 會先給大綱、確認後依模板寫頁面、更新首頁與詞彙表。</li>
+        <li><strong>看檢查報告</strong><code>python3 scripts/check.py</code> 全部 ✅ 才算完成，最後 commit 並推上 GitHub。</li>
+      </ol>
+      <p>原始碼與完整規則：<a href="https://github.com/chrisfang20060717-maker/ai-course-notes">GitHub repository</a>（<a href="https://github.com/chrisfang20060717-maker/ai-course-notes/blob/main/AGENTS.md">AGENTS.md</a>）</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      依 <a href="https://github.com/chrisfang20060717-maker/ai-course-notes/blob/main/AGENTS.md">AGENTS.md</a> 規則產生 ·
+      <a href="https://github.com/chrisfang20060717-maker/ai-course-notes">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
